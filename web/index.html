@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Visitor Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+    <div id="app" class="max-w-xl mx-auto mt-8 p-6 bg-white shadow-md rounded-md">
+
+        <!-- Visitor Registration Form -->
+        <div>
+            <h1 class="text-2xl font-semibold mb-4">Visitor Registration</h1>
+            <!-- Alpine.js x-data for form handling -->
+            <form x-data="{ name: '', affiliation: '', contact: '', host: '', reason: '' }">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-600">Name:</label>
+                    <input x-model="name" type="text" id="name" name="name"
+                        class="mt-1 p-2 w-full border rounded-md">
+                    <p x-show="name === ''" class="text-red-500">Please enter a name.</p>
+                </div>
+
+                <!-- Add similar input fields for other form elements (affiliation, contact, host, reason) -->
+
+                <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    x-bind:disabled="name === ''">
+                    Register Visitor
+                </button>
+            </form>
+        </div>
+
+        <!-- Visitor Dashboard -->
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold mb-4">Visitor Dashboard</h2>
+            <!-- Display a list of registered visitors using Alpine.js x-for -->
+            <ul>
+                <li x-for="visitor in visitors" :key="visitor.id" class="border-b py-2">
+                    <p>Name: <span x-text="visitor.name"></span></p>
+                    <!-- Display other visitor details here -->
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Include Alpine.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"
+        integrity="sha384-o1r5dDAzL8f9fMkU6fIkFpFRvzyd-SoWWAE/cFmYL5kvSY3IK/TbW8oBIqouXdoj" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
