@@ -24,7 +24,33 @@
                     <p x-show="name === ''" class="text-red-500">Please enter a name.</p>
                 </div>
 
-                <!-- Add similar input fields for other form elements (affiliation, contact, host, reason) -->
+                <div class="mb-4">
+                    <label for="affiliation" class="block text-sm font-medium text-gray-600">Affiliation:</label>
+                    <input x-model="affiliation" type="text" id="affiliation" name="affiliation"
+                        class="mt-1 p-2 w-full border rounded-md">
+                    <p x-show="affiliation === ''" class="text-red-500">Please enter an affiliation.</p>
+                </div>
+
+                <div class="mb-4">
+                    <label for="contact" class="block text-sm font-medium text-gray-600">Contact:</label>
+                    <input x-model="contact" type="text" id="contact" name="contact"
+                        class="mt-1 p-2 w-full border rounded-md">
+                    <p x-show="contact === ''" class="text-red-500">Please enter a contact.</p>
+                </div>
+
+                <div class="mb-4">
+                    <label for="host" class="block text-sm font-medium text-gray-600">Host:</label>
+                    <input x-model="host" type="text" id="host" name="host"
+                        class="mt-1 p-2 w-full border rounded-md">
+                    <p x-show="host === ''" class="text-red-500">Please enter a host.</p>
+                </div>
+
+                <div class="mb-4">
+                    <label for="reason" class="block text-sm font-medium text-gray-600">Reason:</label>
+                    <input x-model="reason" type="text" id="reason" name="reason"
+                        class="mt-1 p-2 w-full border rounded-md">
+                    <p x-show="reason === ''" class="text-red-500">Please enter a reason.</p>
+                </div>
 
                 <button type="submit"
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
